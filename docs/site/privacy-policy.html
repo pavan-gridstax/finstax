@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Privacy Policy - Indian Financial Calculator</title>
+    <style>
+      :root {
+        --bg0: #070b14;
+        --bg1: #0b1220;
+        --surface: rgba(16, 27, 51, 0.92);
+        --surface2: rgba(21, 34, 63, 0.88);
+        --topbar: rgba(16, 27, 51, 0.65);
+        --text: #e8eefc;
+        --muted: #b8c3dd;
+        --link: #8ab4ff;
+        --border: rgba(255,255,255,0.12);
+        --shadow: 0 10px 30px rgba(0,0,0,0.35);
+        --radius: 16px;
+        --brand: #8ab4ff;
+        --brandGlow1: rgba(138, 180, 255, 0.12);
+        --brandGlow2: rgba(138, 180, 255, 0.05);
+      }
+
+      html[data-theme="light"] {
+        --bg0: #f6f8ff;
+        --bg1: #eef3ff;
+        --surface: rgba(255, 255, 255, 0.92);
+        --surface2: rgba(255, 255, 255, 0.88);
+        --topbar: rgba(255, 255, 255, 0.78);
+        --text: #0b1220;
+        --muted: rgba(11, 18, 32, 0.70);
+        --link: #2563eb;
+        --border: rgba(11, 18, 32, 0.10);
+        --shadow: 0 10px 30px rgba(11, 18, 32, 0.14);
+        --brand: #2563eb;
+        --brandGlow1: rgba(37, 99, 235, 0.14);
+        --brandGlow2: rgba(37, 99, 235, 0.06);
+      }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
+          "Segoe UI Emoji";
+        background: radial-gradient(1200px 600px at 20% 0%, var(--brandGlow1), transparent 60%),
+          linear-gradient(180deg, var(--bg1), var(--bg0));
+        color: var(--text);
+        line-height: 1.6;
+      }
+      .wrap {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 22px 16px 56px;
+      }
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 14px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: var(--topbar);
+        backdrop-filter: blur(10px);
+        box-shadow: var(--shadow);
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 0;
+      }
+      .logo {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, var(--brandGlow1), var(--brandGlow2));
+        border: 1px solid var(--border);
+      }
+      .brandTitle {
+        font-weight: 900;
+        letter-spacing: 0.2px;
+        line-height: 1.2;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .brandSub {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 1px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .lang {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .select {
+        appearance: none;
+        background: var(--surface2);
+        color: var(--text);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 8px 34px 8px 12px;
+        font-weight: 700;
+        outline: none;
+      }
+      .selectWrap {
+        position: relative;
+      }
+      .selectWrap:after {
+        content: "▾";
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--muted);
+        pointer-events: none;
+      }
+      .card {
+        margin-top: 14px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 22px;
+        backdrop-filter: blur(6px);
+        box-shadow: var(--shadow);
+      }
+      h1, h2, h3 {
+        margin: 0 0 12px;
+        line-height: 1.25;
+      }
+      h1 { font-size: 28px; letter-spacing: -0.2px; }
+      h2 { font-size: 20px; margin-top: 22px; }
+      h3 { font-size: 16px; margin-top: 14px; color: var(--muted); }
+      p { margin: 10px 0; }
+      ul { margin: 10px 0 10px 20px; }
+      a { color: var(--link); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .muted { color: var(--muted); }
+      .pill {
+        display: inline-block;
+        padding: 3px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 12px;
+        margin-right: 8px;
+      }
+      .footer {
+        margin-top: 18px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .hr {
+        height: 1px;
+        background: var(--border);
+        margin: 18px 0;
+      }
+      code { background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 8px; }
+      .notice {
+        margin-top: 10px;
+        padding: 12px 12px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: rgba(138, 180, 255, 0.10);
+      }
+      .kv {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 6px 12px;
+        margin-top: 10px;
+      }
+      .k { color: var(--muted); font-size: 13px; }
+      .v { font-weight: 700; }
+      @media (max-width: 560px) {
+        .kv { grid-template-columns: 1fr; }
+        h1 { font-size: 24px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">IFC</div>
+          <div style="min-width:0">
+            <div class="brandTitle" id="appName">Indian Financial Calculator</div>
+            <div class="brandSub" id="pageTitle">Privacy Policy</div>
+          </div>
+        </div>
+        <div class="lang">
+          <div class="selectWrap">
+            <select class="select" id="langSelect" aria-label="Language">
+              <option value="en">English</option>
+              <option value="hi">हिन्दी</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div id="content"></div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        const PARAM = new URLSearchParams(location.search);
+        const rawLang = (PARAM.get('lang') || '').toLowerCase();
+        const lang = rawLang === 'hi' ? 'hi' : 'en';
+
+        const rawTheme = (PARAM.get('theme') || '').toLowerCase();
+        const theme = rawTheme === 'light' || rawTheme === 'dark' || rawTheme === 'auto' ? rawTheme : 'dark';
+        const resolvedTheme =
+          theme === 'auto'
+            ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
+            : theme;
+
+        document.documentElement.setAttribute('data-theme', resolvedTheme);
+
+        const strings = {
+          en: {
+            appName: 'Indian Financial Calculator',
+            pageTitle: 'Privacy Policy',
+            title: 'Privacy Policy',
+            lastUpdatedLabel: 'Last updated',
+            lastUpdatedValue: 'Jan 9, 2026',
+            intro:
+              'This Privacy Policy explains how <strong>Indian Financial Calculator</strong> (“the App”) handles information when you use the App.',
+            noticeTitle: 'Quick note',
+            noticeBody:
+              'This page is hosted separately and displayed inside the App using a WebView. The privacy practices described here apply to the App and its integrated SDKs.',
+            summaryTitle: 'Summary',
+            summaryItems: [
+              'The App does <strong>not</strong> require you to create an account.',
+              'Some information may be collected by <strong>third-party advertising services</strong> (Google AdMob) to show ads and measure performance.',
+              'The App stores some settings locally on your device using on-device storage (e.g., preferences).',
+            ],
+            collectTitle: 'Information We Collect',
+            collect1Title: '1) Information you provide',
+            collect1Body:
+              'The App may allow you to enter values (e.g., amount, interest rate, tenure) to perform calculations. These values are used to calculate results inside the App. The App is designed to work without requiring you to submit this data to a server owned by us.',
+            collect2Title: '2) On-device storage (local)',
+            collect2Body:
+              'The App may store some data locally on your device (for example, language settings, app preferences, and usage counters) using local storage mechanisms (such as AsyncStorage). This data stays within the app sandbox on your device.',
+            collect3Title: '3) Advertising / analytics data (third parties)',
+            collect3Body:
+              'The App uses <strong>Google AdMob</strong> (Google Mobile Ads SDK) to display ads. AdMob may automatically collect certain information to provide, personalize (if enabled), and measure ads, and to prevent fraud/abuse.',
+            collect3ExamplesLabel:
+              'Examples of data AdMob may process can include (depending on device settings, region, and ad configuration):',
+            collect3Examples: [
+              'Advertising ID (such as AAID) and other device identifiers',
+              'IP address, device information, app interactions, and approximate location (derived from IP)',
+              'Ad engagement events (e.g., impressions, clicks)',
+              'Diagnostic information for ad delivery and fraud prevention',
+            ],
+            learnMore: 'Learn more:',
+            useTitle: 'How We Use Information',
+            useItems: [
+              '<strong>To provide app features:</strong> calculate and display results based on the inputs you enter.',
+              '<strong>To store preferences:</strong> remember settings like language and other app options on your device.',
+              '<strong>To show ads:</strong> serve and measure advertisements via AdMob.',
+              '<strong>To improve stability:</strong> basic diagnostics may be used by third-party SDKs for reliability and fraud prevention.',
+            ],
+            sharingTitle: 'Sharing of Information',
+            sharingBody:
+              'We do not sell your personal information. However, the App uses third-party services (such as Google AdMob) that may collect and process information as described above. These services operate under their own privacy policies.',
+            retentionTitle: 'Data Retention',
+            retentionBody:
+              'Inputs you enter for calculations are intended to be processed on-device. Locally stored preferences remain on your device until you clear the app data or uninstall the App. Third-party SDK data retention is governed by their respective policies.',
+            permissionsTitle: 'Device Permissions',
+            permissionsBody:
+              'The App generally does not require sensitive permissions to perform calculations. If you use features like exporting/sharing, the App uses your device\'s sharing mechanisms to export content that you choose.',
+            exportTitle: 'Exporting / Sharing',
+            exportBody:
+              'If the App includes features like exporting or sharing (for example, sharing a PDF or result summary), the content you choose to export/share is initiated by you and sent through the system sharing sheet to the apps you select. We do not automatically send your data to our servers.',
+            choicesTitle: 'Your Choices',
+            choicesItems: [
+              '<strong>Ad personalization controls:</strong> you can reset or limit ad personalization via your device settings.',
+              '<strong>Uninstall:</strong> you can stop all data collection by uninstalling the App.',
+            ],
+            childrenTitle: 'Children’s Privacy',
+            childrenBody:
+              'The App is not intended for children under 13. If you believe a child has provided personal information, please contact us and we will take appropriate steps.',
+            securityTitle: 'Security',
+            securityBody:
+              'We take reasonable measures to protect information within the scope of the App. However, no method of transmission or storage is 100% secure.',
+            changesTitle: 'Changes to This Policy',
+            changesBody:
+              'We may update this Privacy Policy from time to time. We will post the updated version on this page and update the “Last updated” date above.',
+            contactTitle: 'Contact',
+            contactBody: 'If you have questions about this Privacy Policy, contact:',
+            contactEmailLabel: 'Email',
+            disclaimer:
+              '<strong>Disclaimer:</strong> The App is for educational and informational purposes only and does not provide financial, tax, or legal advice.',
+          },
+          hi: {
+            appName: 'Indian Financial Calculator',
+            pageTitle: 'गोपनीयता नीति',
+            title: 'गोपनीयता नीति',
+            lastUpdatedLabel: 'अंतिम अपडेट',
+            lastUpdatedValue: '9 जन 2026',
+            intro:
+              'यह गोपनीयता नीति बताती है कि <strong>Indian Financial Calculator</strong> (“ऐप”) आपके द्वारा ऐप उपयोग करने पर जानकारी को कैसे संभालता है।',
+            noticeTitle: 'त्वरित नोट',
+            noticeBody:
+              'यह पेज अलग से होस्ट किया गया है और ऐप में WebView के माध्यम से दिखाया जाता है। यहाँ वर्णित गोपनीयता प्रथाएँ ऐप और इसके एकीकृत SDKs पर लागू होती हैं।',
+            // बाकी सामग्री अभी अंग्रेज़ी में फ़ॉलबैक के रूप में दिखाई जाएगी
+          },
+        };
+
+        const S = { ...strings.en, ...(strings[lang] || {}) };
+
+        document.documentElement.setAttribute('lang', lang);
+        document.title = `${S.pageTitle} - ${S.appName}`;
+        document.getElementById('appName').textContent = S.appName;
+        document.getElementById('pageTitle').textContent = S.pageTitle;
+
+        const email = 'fappsupport@gridstax.com';
+
+        function li(items) {
+          return items.map((x) => `<li>${x}</li>`).join('');
+        }
+
+        const learnMoreLinks = `
+          <ul>
+            <li><a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">Google Privacy Policy</a></li>
+            <li><a href="https://support.google.com/admob/" target="_blank" rel="noreferrer">Google AdMob Help Center</a></li>
+            <li><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noreferrer">AdMob & GDPR</a></li>
+          </ul>
+        `;
+
+        const content = `
+          <div>
+            <span class="pill">${S.appName}</span>
+            <span class="pill">${S.pageTitle}</span>
+          </div>
+
+          <h1>${S.title}</h1>
+
+          <div class="kv" aria-label="Policy metadata">
+            <div class="k"><strong>${S.lastUpdatedLabel}:</strong></div>
+            <div class="v">${S.lastUpdatedValue}</div>
+          </div>
+
+          <p>${S.intro}</p>
+
+          <div class="notice">
+            <div style="font-weight:900; margin-bottom:6px;">${S.noticeTitle}</div>
+            <div class="muted">${S.noticeBody}</div>
+          </div>
+
+          <div class="hr"></div>
+
+          <h2>${S.summaryTitle}</h2>
+          <ul>
+            ${li(S.summaryItems)}
+          </ul>
+
+          <h2>${S.collectTitle}</h2>
+
+          <h3>${S.collect1Title}</h3>
+          <p>${S.collect1Body}</p>
+
+          <h3>${S.collect2Title}</h3>
+          <p>${S.collect2Body}</p>
+
+          <h3>${S.collect3Title}</h3>
+          <p>${S.collect3Body}</p>
+          <p class="muted">${S.collect3ExamplesLabel}</p>
+          <ul>
+            ${li(S.collect3Examples)}
+          </ul>
+          <p>${S.learnMore}</p>
+          ${learnMoreLinks}
+
+          <h2>${S.useTitle}</h2>
+          <ul>
+            ${li(S.useItems)}
+          </ul>
+
+          <h2>${S.sharingTitle}</h2>
+          <p>${S.sharingBody}</p>
+
+          <h2>${S.retentionTitle}</h2>
+          <p>${S.retentionBody}</p>
+
+          <h2>${S.permissionsTitle}</h2>
+          <p>${S.permissionsBody}</p>
+
+          <h2>${S.exportTitle}</h2>
+          <p>${S.exportBody}</p>
+
+          <h2>${S.choicesTitle}</h2>
+          <ul>
+            ${li(S.choicesItems)}
+          </ul>
+
+          <h2>${S.childrenTitle}</h2>
+          <p>${S.childrenBody}</p>
+
+          <h2>${S.securityTitle}</h2>
+          <p>${S.securityBody}</p>
+
+          <h2>${S.changesTitle}</h2>
+          <p>${S.changesBody}</p>
+
+          <h2>${S.contactTitle}</h2>
+          <p>${S.contactBody}</p>
+          <p><strong>${S.contactEmailLabel}:</strong> <a href="mailto:${email}">${email}</a></p>
+
+          <div class="footer">
+            <p>${S.disclaimer}</p>
+          </div>
+        `;
+
+        const container = document.getElementById('content');
+        container.innerHTML = content;
+
+        const sel = document.getElementById('langSelect');
+        sel.value = lang;
+        sel.addEventListener('change', () => {
+          const next = sel.value;
+          const url = new URL(location.href);
+          url.searchParams.set('lang', next);
+          location.href = url.toString();
+        });
+      })();
+    </script>
+  </body>
+</html>

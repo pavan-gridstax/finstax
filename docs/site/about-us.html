@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>About Us - Indian Financial Calculator</title>
+    <style>
+      :root {
+        --bg0: #070b14;
+        --bg1: #0b1220;
+        --surface: rgba(16, 27, 51, 0.92);
+        --surface2: rgba(21, 34, 63, 0.88);
+        --topbar: rgba(16, 27, 51, 0.65);
+        --text: #e8eefc;
+        --muted: #b8c3dd;
+        --link: #8ab4ff;
+        --border: rgba(255,255,255,0.12);
+        --shadow: 0 10px 30px rgba(0,0,0,0.35);
+        --radius: 16px;
+        --brandGlow1: rgba(138, 180, 255, 0.12);
+        --brandGlow2: rgba(138, 180, 255, 0.05);
+      }
+
+      html[data-theme="light"] {
+        --bg0: #f6f8ff;
+        --bg1: #eef3ff;
+        --surface: rgba(255, 255, 255, 0.92);
+        --surface2: rgba(255, 255, 255, 0.88);
+        --topbar: rgba(255, 255, 255, 0.78);
+        --text: #0b1220;
+        --muted: rgba(11, 18, 32, 0.70);
+        --link: #2563eb;
+        --border: rgba(11, 18, 32, 0.10);
+        --shadow: 0 10px 30px rgba(11, 18, 32, 0.14);
+        --brandGlow1: rgba(37, 99, 235, 0.14);
+        --brandGlow2: rgba(37, 99, 235, 0.06);
+      }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
+          "Segoe UI Emoji";
+        background: radial-gradient(1200px 600px at 20% 0%, var(--brandGlow1), transparent 60%),
+          linear-gradient(180deg, var(--bg1), var(--bg0));
+        color: var(--text);
+        line-height: 1.6;
+      }
+      .wrap {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 22px 16px 56px;
+      }
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 14px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: var(--topbar);
+        backdrop-filter: blur(10px);
+        box-shadow: var(--shadow);
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 0;
+      }
+      .logo {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, var(--brandGlow1), var(--brandGlow2));
+        border: 1px solid var(--border);
+      }
+      .brandTitle {
+        font-weight: 900;
+        letter-spacing: 0.2px;
+        line-height: 1.2;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .brandSub {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 1px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .lang {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .select {
+        appearance: none;
+        background: var(--surface2);
+        color: var(--text);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 8px 34px 8px 12px;
+        font-weight: 700;
+        outline: none;
+      }
+      .selectWrap {
+        position: relative;
+      }
+      .selectWrap:after {
+        content: "▾";
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--muted);
+        pointer-events: none;
+      }
+      .card {
+        margin-top: 14px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 22px;
+        backdrop-filter: blur(6px);
+        box-shadow: var(--shadow);
+      }
+      h1, h2, h3 {
+        margin: 0 0 12px;
+        line-height: 1.25;
+      }
+      h1 { font-size: 28px; letter-spacing: -0.2px; }
+      h2 { font-size: 20px; margin-top: 22px; }
+      h3 { font-size: 16px; margin-top: 14px; color: var(--muted); }
+      p { margin: 10px 0; }
+      a { color: var(--link); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .muted { color: var(--muted); }
+      .pill {
+        display: inline-block;
+        padding: 3px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 12px;
+        margin-right: 8px;
+      }
+      .footer {
+        margin-top: 18px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .hr {
+        height: 1px;
+        background: var(--border);
+        margin: 18px 0;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .tile {
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 12px;
+        background: rgba(255,255,255,0.03);
+      }
+      .tileTitle {
+        font-weight: 900;
+        margin-bottom: 4px;
+      }
+      .kv {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 6px 12px;
+        margin-top: 10px;
+      }
+      .k { color: var(--muted); font-size: 13px; }
+      .v { font-weight: 700; }
+      @media (max-width: 720px) {
+        .grid { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 560px) {
+        .kv { grid-template-columns: 1fr; }
+        h1 { font-size: 24px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">IFC</div>
+          <div style="min-width:0">
+            <div class="brandTitle" id="appName">Indian Financial Calculator</div>
+            <div class="brandSub" id="pageTitle">About Us</div>
+          </div>
+        </div>
+        <div class="lang">
+          <div class="selectWrap">
+            <select class="select" id="langSelect" aria-label="Language">
+              <option value="en">English</option>
+              <option value="hi">हिन्दी</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div id="content"></div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        const PARAM = new URLSearchParams(location.search);
+        const rawLang = (PARAM.get('lang') || '').toLowerCase();
+        const lang = rawLang === 'hi' ? 'hi' : 'en';
+
+        const rawTheme = (PARAM.get('theme') || '').toLowerCase();
+        const theme = rawTheme === 'light' || rawTheme === 'dark' || rawTheme === 'auto' ? rawTheme : 'dark';
+        const resolvedTheme =
+          theme === 'auto'
+            ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
+            : theme;
+
+        document.documentElement.setAttribute('data-theme', resolvedTheme);
+
+        const strings = {
+          en: {
+            appName: 'Indian Financial Calculator',
+            pageTitle: 'About Us',
+            title: 'About Us',
+            subtitle: 'A simple, privacy-conscious financial calculator toolkit.',
+            overviewTitle: 'What this app does',
+            overviewBody:
+              'Indian Financial Calculator helps you run common finance calculations (like EMI, FD/RD, SIP, inflation, etc.) quickly and clearly. Most calculations are intended to work on-device without requiring you to create an account.',
+            principlesTitle: 'Principles',
+            principles: [
+              { title: 'Clarity', body: 'Transparent inputs and results with sensible defaults.' },
+              { title: 'Privacy-first', body: 'No mandatory sign-in; most computation happens locally.' },
+              { title: 'Utility', body: 'Designed for everyday personal finance checks.' },
+              { title: 'Simplicity', body: 'Fast UI and minimal friction.' },
+            ],
+            contactTitle: 'Contact',
+            contactBody: 'For feedback, bug reports, or questions, reach out:',
+            emailLabel: 'Email',
+            email: 'fappsupport@gridstax.com',
+            disclaimerTitle: 'Disclaimer',
+            disclaimerBody:
+              'This app is for educational and informational purposes only and does not provide financial, tax, or legal advice.',
+          },
+          hi: {
+            appName: 'Indian Financial Calculator',
+            pageTitle: 'हमारे बारे में',
+            title: 'हमारे बारे में',
+            subtitle: 'सरल और गोपनीयता-केंद्रित वित्तीय कैलकुलेटर टूलकिट।',
+            overviewTitle: 'यह ऐप क्या करता है',
+            overviewBody:
+              'Indian Financial Calculator आपको EMI, FD/RD, SIP, मुद्रास्फीति आदि जैसे सामान्य वित्तीय कैलकुलेशन जल्दी और स्पष्ट रूप से करने में मदद करता है। अधिकांश कैलकुलेशन आपके डिवाइस पर ही होते हैं और खाता बनाना आवश्यक नहीं है।',
+            principlesTitle: 'मूल सिद्धांत',
+            principles: [
+              { title: 'स्पष्टता', body: 'पारदर्शी इनपुट और परिणाम, उपयोगी डिफ़ॉल्ट के साथ।' },
+              { title: 'गोपनीयता', body: 'अनिवार्य साइन-इन नहीं; अधिकतर गणना लोकल रूप से।' },
+              { title: 'उपयोगिता', body: 'रोज़मर्रा के पर्सनल फाइनेंस के लिए बनाया गया।' },
+              { title: 'सरलता', body: 'तेज़ UI और कम घर्षण।' },
+            ],
+            contactTitle: 'संपर्क',
+            contactBody: 'फीडबैक, बग रिपोर्ट या प्रश्नों के लिए संपर्क करें:',
+            emailLabel: 'ईमेल',
+            email: 'fappsupport@gridstax.com',
+            disclaimerTitle: 'अस्वीकरण',
+            disclaimerBody:
+              'यह ऐप केवल शैक्षणिक/सूचनात्मक उद्देश्य के लिए है और वित्तीय, कर या कानूनी सलाह नहीं देता।',
+          },
+        };
+
+        const S = strings[lang] || strings.en;
+
+        document.documentElement.setAttribute('lang', lang);
+        document.title = `${S.pageTitle} - ${S.appName}`;
+        document.getElementById('appName').textContent = S.appName;
+        document.getElementById('pageTitle').textContent = S.pageTitle;
+
+        const email = S.email;
+
+        const principles = S.principles
+          .map(
+            (p) => `
+            <div class="tile">
+              <div class="tileTitle">${p.title}</div>
+              <div class="muted">${p.body}</div>
+            </div>`
+          )
+          .join('');
+
+        const content = `
+          <div>
+            <span class="pill">${S.appName}</span>
+            <span class="pill">${S.pageTitle}</span>
+          </div>
+
+          <h1>${S.title}</h1>
+          <p class="muted">${S.subtitle}</p>
+
+          <div class="hr"></div>
+
+          <h2>${S.overviewTitle}</h2>
+          <p>${S.overviewBody}</p>
+
+          <h2>${S.principlesTitle}</h2>
+          <div class="grid">${principles}</div>
+
+          <h2>${S.contactTitle}</h2>
+          <p>${S.contactBody}</p>
+          <p><strong>${S.emailLabel}:</strong> <a href="mailto:${email}">${email}</a></p>
+
+          <h2>${S.disclaimerTitle}</h2>
+          <p>${S.disclaimerBody}</p>
+
+          <div class="footer">
+            <p class="muted">If you are viewing this inside the app, it is displayed using a WebView.</p>
+          </div>
+        `;
+
+        const container = document.getElementById('content');
+        container.innerHTML = content;
+
+        const sel = document.getElementById('langSelect');
+        sel.value = lang;
+        sel.addEventListener('change', () => {
+          const next = sel.value;
+          const url = new URL(location.href);
+          url.searchParams.set('lang', next);
+          location.href = url.toString();
+        });
+      })();
+    </script>
+  </body>
+</html>
